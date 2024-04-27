@@ -1,19 +1,13 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
-# final-project-skeleton
+
+# ESE 3500 Final Project - Spring 2024
 
     * Team Name: PostureGuard: Real-time Posture Monitoring and Correction System
     * Team Members: Tobby Zhu, Steven Walxim
     * Github Repository URL: https://github.com/ese3500/final-project-spine
-    * Github Pages Website URL: [for final submission]
     * Description of hardware: Atmega328PB, ESP32 Feather, MPU6050, buzzer
 
 
 ![ESE 3500 Final Project Block Diagram](https://github.com/ese3500/final-project-spine/assets/16732316/76a91e80-e5a7-4b1b-82af-96471e74eef5)
-
-## Final Project Report
-
-Don't forget to make the GitHub pages public website!
-If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
 ### 1. Video
 
@@ -71,99 +65,5 @@ The main next step for this project is incorporating a more robust algorithm for
 We referenced a Mohony algorithm library by Davide Gironi. The code is mostly based on a port of the arduino mpu6050 library by Jeff Rowberg (https://github.com/jrowberg/i2cdevlib). We also benefited from the resources about Mahony complementary filter for attitude estimation (http://www.x-io.co.uk).
 
 
-
-    
-## Final Project Proposal
-
-### 1. Abstract
-
-PostureGuard is a novel, wearable system designed to combat the prevalent issue of poor body posture, exacerbated by the modern lifestyle of prolonged sitting and screen time. Utilizing an array of IMUs placed on the user's back, the system accurately monitors spinal orientation and movement in real-time. Data transmitted via ESP32 chips to a webpage allows for immediate visual feedback on the user’s posture. If unhealthy posture is detected, the system promptly alerts the user through a buzzer, facilitating instant correction. This project combines hardware integration and web development to offer a non-intrusive, cost-effective solution for real-time posture monitoring and correction, aiming to contribute to long-term health improvements and increased awareness about posture.
-
-### 2. Motivation
-
-Poor body posture can lead to long-term health issues, including back pain, spinal dysfunction, joint degeneration, and reduced flexibility. With the increasing amount of time people spend sitting at desks and looking at screens, there's a critical need for a proactive solution to monitor and correct posture in real-time. Most existing solutions are either intrusive, expensive, or fail to provide instant feedback. Our project, PostureGuard, aims to bridge this gap by offering a non-intrusive, cost-effective, and immediate feedback mechanism to encourage healthier body posture.
-
-### 3. Goals
-
-Our project aims to develop a lightweight, wearable system using multiple IMUs placed on a person's back to accurately monitor their posture in real-time. This data will be transmitted via an ESP32 module to a webpage that visually represents the user's current posture. If unhealthy posture is detected, the system will immediately alert the user through a buzzer. By the project's conclusion, we aim to achieve:  
-•	Real-time posture monitoring with visual feedback on a webpage  
-•	Instantaneous alert system for posture correction   
-
-
-### 4. Software Requirements Specification (SRS)
-
-1. Processing data from multiple IMUs and convert into real-time acceleration and pitch, yaw angles, with accuracy of <2 degrees for the angles
-2. Reconstruct the relative position of wearer's spine and show an understandable visual representation to user
-3. Send software alert if certain dimension of the spine's position is beyond a preset threshold
-4. A reliable and secure wireless communication protocol between the IMUs/ESP32 modules and the server hosting the webpage.
-
-
-### 5. Hardware Requirements Specification (HRS)
-
-1. IMUs (Inertial Measurement Units): IMUs with 6 degrees of freedom, with minimum sampling rate >100Hz.
-2. ESP32 Modules for wireless data transmission
-3. A 5V DC vibrater that produces a noticeable vibration when worn on body
-4. Power Supply: 5V and 3.3V battery packs or power solutions that can sustain the operation of the IMUs, ESP32 modules, and buzzer for extended periods.
-5. Wearable Vest: A comfortable, adjustable vest designed to hold the IMUs in the correct positions along the user’s spine.
-
-### 6. MVP Demo
-
-We expect to demo the following functionalities for MVP:
-1. IMU data collection and transmission: the IMUs should accurately collect posture data and transmit them through Internet to the server
-2. Preliminary body pose reconstruction: the wearer's body pose should be reconstructed from the IMU data; this information can be printed on serial monitor or the webpage
-
-
-### 7. Final Demo
-
-By the final demonstration, we aim to achieve:
-
-Advanced Posture Monitoring: Full implementation of real-time data processing and analysis with a detailed 3D visualization of the user's posture on the webpage.
-Refined Alert System: A fully integrated alert system with adjustable thresholds for posture correction, providing instantaneous feedback through the buzzer.
-Comprehensive Webpage Interface: A fully developed webpage interface that not only displays real-time and historical posture data but also offers user-specific recommendations for posture improvement.
-
-### 8. Methodology
-
-The project is naturally divided into 4 phases, which we plan to complete in sequence and test each module for functionality before moving onto the next one.
-1.	IMU Integration and Data Collection: We will start by integrating multiple IMUs onto a wearable vest to collect posture data. This setup will capture the orientation and movements of the wearer's spine.
-2.	Data Transmission and Web Development: Utilizing ESP32 modules, the collected data will be sent to a server that processes the information and updates a webpage in real-time to display the wearer's posture.
-3.	Feedback System: If the system detects unhealthy posture, it will trigger a buzzer attached to the vest, alerting the wearer to correct their posture.
-4.	Analysis and Improvement: We plan to collect and analyze posture data to provide users with insights and recommendations for long-term posture improvement.
-
-
-### 9. Components
-
-•	IMU Sensors: To measure orientation and acceleration, providing data on the wearer's posture. 
-
-•	ESP32 Modules: For wireless data transmission between the IMUs and the web server.
-
-•	Buzzer: For immediate feedback to the wearer when incorrect posture is detected.
-
-•	Webpage: To display real-time posture visualization and long-term posture analytics.
-
-
-### 10. Evaluation
-
-•	Accuracy of the IMU sensors: the sensors can precisely capture 3D posture of the body as per SRS.
-
-•	User experience of webpage: the webpage or any other visual representation of body posture is intuitive to the user to understand
-
-•	Effectiveness of the feedback mechanism: the warning system against bad posture is effective for real use cases
-
-
-### 11. Timeline
-
-This section is to help guide your progress over the next few weeks. Feel free to adjust and edit the table below to something that would be useful to you. Really think about what you want to accomplish by the first milestone.
-
-| **Week**            | **Task** | **Assigned To**    |
-|----------           |--------- |------------------- |
-| Week 1: 3/24 - 3/31 |  find equipments        |   steven                 |
-| Week 2: 4/1 - 4/7   |  finish programming the first IMU        |         BOTH           |
-| Week 3: 4/8 - 4/14  | assemble multiple         |          BOTH          |
-| Week 4: 4/15 - 4/21 | disconnected usage (wifi)         |       BOTH             |
-| Week 5: 4/22 - 4/26 |  Final Product        |       BOTH             |
-
-### 12. Proposal Presentation
-
-Add your slides to the Final Project Proposal slide deck in the Google Drive.
 
 
